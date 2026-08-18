@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rev. William Ward Senior Secondary School — North Lakhimpur, Assam</title>
+    <meta
+      name="description"
+      content="Rev. William Ward Senior Secondary School, North Lakhimpur, Assam — nurturing minds and building character through Knowledge, Discipline and Service. Classes VI to XII."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="theme-color" content="#0a1f44" />
+
+    <!-- Open Graph (nice when the link is shared) -->
+    <meta property="og:title" content="Rev. William Ward Senior Secondary School" />
+    <meta
+      property="og:description"
+      content="Knowledge · Discipline · Service — a senior secondary school in North Lakhimpur, Assam."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./images/hero-campus.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Ambient background blobs (sit behind the 3D canvas) -->
+    <div class="bg-glow bg-glow--a" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--b" aria-hidden="true"></div>
+
+    <!-- Three.js scene -->
+    <canvas id="scene" aria-hidden="true"></canvas>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+    <!-- Navigation -->
+    <header class="nav" id="nav">
+      <a class="brand" href="#home" aria-label="Rev. William Ward Senior Secondary School — home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="40" height="40" role="img">
+            <defs>
+              <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#6fb7ff"/>
+                <stop offset="1" stop-color="#174ea6"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 3 59 14v17c0 15-11.5 25-27 31C16.5 56 5 46 5 31V14L32 3z" fill="url(#lg)"/>
+            <path d="M32 9 54 18v13c0 12.5-9.5 21.5-22 26C19.5 52.5 10 43.5 10 31V18L32 9z" fill="none" stroke="#eaf3ff" stroke-opacity=".6" stroke-width="1.5"/>
+            <text x="32" y="42" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#eaf3ff" text-anchor="middle">WW</text>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <strong>Rev. William Ward</strong>
+          <small>Senior Secondary School</small>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#home" class="is-active">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#activities">Activities</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#contact">Contact</a>
+        <a class="nav__cta" href="#admissions">Apply Now</a>
+      </nav>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <!-- ============ HOME / HERO ============ -->
+      <section class="hero" id="home">
+        <div class="container hero__inner">
+          <p class="eyebrow reveal">Est. 2005 &nbsp;·&nbsp; North Lakhimpur, Assam, India</p>
+          <h1 class="hero-title reveal" data-tilt>
+            <span class="hero-title__line hero-title__line--1">Rev. William Ward</span>
+            <span class="hero-title__line hero-title__line--2">Senior Secondary</span>
+            <span class="hero-title__line hero-title__line--3">School</span>
+          </h1>
+          <p class="hero-motto reveal">
+            <span class="dot" aria-hidden="true"></span> Knowledge · Discipline · Service
+            <span class="dot" aria-hidden="true"></span>
+          </p>
+          <p class="hero-sub reveal">
+            A senior secondary school in the heart of Assam, where bright young minds are shaped
+            into confident, compassionate and capable citizens.
+          </p>
+          <div class="hero-cta reveal">
+            <a class="btn btn--primary" href="#admissions">Apply for Admission</a>
+            <a class="btn btn--ghost" href="#about">Explore the School</a>
+          </div>
+
+          <div class="hero-stats reveal">
+            <div class="stat"><span class="stat__num" data-count="850">0</span><span class="stat__plus">+</span><span class="stat__label">Students</span></div>
+            <div class="stat"><span class="stat__num" data-count="45">0</span><span class="stat__plus">+</span><span class="stat__label">Faculty &amp; Staff</span></div>
+            <div class="stat"><span class="stat__num" data-count="18">0</span><span class="stat__plus">+</span><span class="stat__label">Years of Excellence</span></div>
+            <div class="stat"><span class="stat__num" data-count="96">0</span><span class="stat__plus">%</span><span class="stat__label">Board Pass Rate</span></div>
+          </div>
+        </div>
+        <a class="scroll-hint" href="#about" aria-label="Scroll to About">
+          <span class="mouse" aria-hidden="true"></span>
+          <span>Scroll</span>
+        </a>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">About Us</p>
+            <h2>Where knowledge meets <em>character</em></h2>
+            <p class="lede">
+              Rev. William Ward Senior Secondary School is a co-educational institution committed
+              to academic excellence and holistic development.
+            </p>
+          </div>
+
+          <div class="split">
+            <div class="split__media reveal">
+              <img src="./images/about-students.jpg" alt="Students of Rev. William Ward Senior Secondary School in uniform" loading="lazy" />
+              <div class="media-badge">
+                <strong>18+</strong>
+                <span>Years of<br />nurturing talent</span>
+              </div>
+            </div>
+            <div class="split__body reveal">
+              <h3>Our Story</h3>
+              <p>
+                Founded in 2005, the school was established to bring quality, values-driven
+                education to the young people of North Lakhimpur and the surrounding region. What
+                began as a small campus has grown into a thriving community of learners,
+                educators and families who share a single belief — that every child deserves the
+                chance to shine.
+              </p>
+              <p>
+                We balance a rigorous academic programme with sport, art, music and community
+                service, so our students leave us not only with strong results but with strong
+                character.
+              </p>
+
+              <div class="pillar-grid">
+                <div class="pillar">
+                  <span class="pillar__icon" aria-hidden="true">🎯</span>
+                  <div>
+                    <h4>Our Mission</h4>
+                    <p>To deliver a well-rounded education that fosters curiosity, confidence and compassion in every learner.</p>
+                  </div>
+                </div>
+                <div class="pillar">
+                  <span class="pillar__icon" aria-hidden="true">🔭</span>
+                  <div>
+                    <h4>Our Vision</h4>
+                    <p>To be a leading school in Assam, known for producing thoughtful, skilled and responsible citizens.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ACADEMICS ============ -->
+      <section class="section section--alt" id="academics">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Academics</p>
+            <h2>A curriculum built to <em>inspire</em></h2>
+            <p class="lede">
+              From foundational middle-school years to senior secondary specialisation, our
+              academic programme is structured, supportive and ambitious.
+            </p>
+          </div>
+
+          <div class="split split--reverse">
+            <div class="split__media reveal">
+              <img src="./images/academics-classroom.jpg" alt="A classroom at Rev. William Ward Senior Secondary School" loading="lazy" />
+            </div>
+            <div class="split__body reveal">
+              <h3>Classes VI – XII</h3>
+              <p>
+                Our senior secondary wing prepares students thoroughly for their board
+                examinations, while our middle school builds the strong foundations in language,
+                mathematics, science and the humanities that make later success possible.
+              </p>
+              <ul class="check-list">
+                <li>Well-structured streams in <strong>Science, Commerce and Humanities</strong></li>
+                <li>Experienced subject-specialist teachers and small learning groups</li>
+                <li>Smart classrooms and digital learning resources</li>
+                <li>Regular assessments, remedial support and career guidance</li>
+                <li>Consistent, above-average board examination results</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="stream-grid reveal">
+            <div class="stream">
+              <span class="stream__icon" aria-hidden="true">🧪</span>
+              <h4>Science</h4>
+              <p>Physics, Chemistry, Biology, Mathematics and Computer Science for the curious and the inventive.</p>
+            </div>
+            <div class="stream">
+              <span class="stream__icon" aria-hidden="true">📈</span>
+              <h4>Commerce</h4>
+              <p>Accountancy, Business Studies, Economics and Mathematics for future leaders and entrepreneurs.</p>
+            </div>
+            <div class="stream">
+              <span class="stream__icon" aria-hidden="true">📚</span>
+              <h4>Humanities</h4>
+              <p>History, Geography, Political Science and languages for those who study people and ideas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FACILITIES ============ -->
+      <section class="section" id="facilities">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Facilities</p>
+            <h2>A campus designed for <em>learning</em></h2>
+            <p class="lede">
+              Every corner of our campus is built to support curiosity, creativity and well-being.
+            </p>
+          </div>
+
+          <div class="facility-feature reveal">
+            <img src="./images/facilities-lab.jpg" alt="Science laboratory at Rev. William Ward Senior Secondary School" loading="lazy" />
+          </div>
+
+          <div class="facility-grid">
+            <article class="facility reveal">
+              <span class="facility__icon" aria-hidden="true">📖</span>
+              <h4>Library</h4>
+              <p>A quiet, well-stocked library with thousands of books, journals and a reading corner.</p>
+            </article>
+            <article class="facility reveal">
+              <span class="facility__icon" aria-hidden="true">🧫</span>
+              <h4>Science Labs</h4>
+              <p>Fully equipped Physics, Chemistry and Biology laboratories for hands-on discovery.</p>
+            </article>
+            <article class="facility reveal">
+              <span class="facility__icon" aria-hidden="true">💻</span>
+              <h4>Computer Lab</h4>
+              <p>A modern computer lab with internet access for digital literacy and coding.</p>
+            </article>
+            <article class="facility reveal">
+              <span class="facility__icon" aria-hidden="true">🖥️</span>
+              <h4>Smart Classrooms</h4>
+              <p>Interactive digital boards that bring lessons to life in every subject.</p>
+            </article>
+            <article class="facility reveal">
+              <span class="facility__icon" aria-hidden="true">🏟️</span>
+              <h4>Sports Ground</h4>
+              <p>A spacious field for football, cricket, athletics and our annual sports meet.</p>
+            </article>
+            <article class="facility reveal">
+              <span class="facility__icon" aria-hidden="true">🎭</span>
+              <h4>Activity Hall</h4>
+              <p>An indoor hall for assemblies, cultural programmes, debates and workshops.</p>
+            </article>
+            <article class="facility reveal">
+              <span class="facility__icon" aria-hidden="true">🚌</span>
+              <h4>School Transport</h4>
+              <p>Safe, monitored bus routes covering North Lakhimpur and nearby areas.</p>
+            </article>
+            <article class="facility reveal">
+              <span class="facility__icon" aria-hidden="true">🩺</span>
+              <h4>Infirmary &amp; Care</h4>
+              <p>A first-aid room and caring staff to look after every child's well-being.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ACTIVITIES / SPORTS ============ -->
+      <section class="section section--alt" id="activities">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Beyond the Classroom</p>
+            <h2>Activities &amp; <em>sports</em></h2>
+            <p class="lede">
+              Talent grows when it is given room to play, perform and explore.
+            </p>
+          </div>
+
+          <div class="split">
+            <div class="split__media reveal">
+              <img src="./images/activities-sports.jpg" alt="Students playing football at Rev. William Ward Senior Secondary School" loading="lazy" />
+            </div>
+            <div class="split__body reveal">
+              <h3>Clubs &amp; Teams</h3>
+              <div class="club-grid">
+                <div class="club"><span aria-hidden="true">⚽</span> Football</div>
+                <div class="club"><span aria-hidden="true">🏏</span> Cricket</div>
+                <div class="club"><span aria-hidden="true">🏸</span> Badminton</div>
+                <div class="club"><span aria-hidden="true">🏃</span> Athletics</div>
+                <div class="club"><span aria-hidden="true">🔬</span> Science Club</div>
+                <div class="club"><span aria-hidden="true">✍️</span> Literary Club</div>
+                <div class="club"><span aria-hidden="true">🎵</span> Music &amp; Arts</div>
+                <div class="club"><span aria-hidden="true">🌱</span> Eco Club</div>
+                <div class="club"><span aria-hidden="true">🗣️</span> Debate Society</div>
+                <div class="club"><span aria-hidden="true">🎒</span> Scouts &amp; Guides</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-strip reveal">
+            <div class="event"><strong>Annual Sports Meet</strong><span>Every winter — athletics, races and team spirit.</span></div>
+            <div class="event"><strong>Cultural Fest</strong><span>Music, dance and drama from every house.</span></div>
+            <div class="event"><strong>Science Exhibition</strong><span>Students showcase working models and ideas.</span></div>
+            <div class="event"><strong>Annual Day</strong><span>A celebration of achievement with parents and guests.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ADMISSIONS ============ -->
+      <section class="section" id="admissions">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Admissions</p>
+            <h2>Begin your child's <em>journey</em></h2>
+            <p class="lede">
+              A warm welcome awaits. Joining Rev. William Ward Senior Secondary School is simple
+              and transparent.
+            </p>
+          </div>
+
+          <div class="split split--reverse">
+            <div class="split__media reveal">
+              <img src="./images/admissions-gate.jpg" alt="The entrance gate of Rev. William Ward Senior Secondary School" loading="lazy" />
+            </div>
+            <div class="split__body reveal">
+              <h3>How to apply</h3>
+              <ol class="steps">
+                <li><span>1</span><div><strong>Enquire</strong><p>Call, email or visit the school office to collect details.</p></div></li>
+                <li><span>2</span><div><strong>Apply</strong><p>Fill in the admission form and submit the required documents.</p></div></li>
+                <li><span>3</span><div><strong>Interaction</strong><p>A friendly meeting and, for some classes, an assessment.</p></div></li>
+                <li><span>4</span><div><strong>Enrol</strong><p>Complete the formalities and welcome to the family!</p></div></li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="requirements reveal">
+            <h3>Documents you'll need</h3>
+            <ul class="check-list check-list--cols">
+              <li>Birth certificate</li>
+              <li>Previous school report card</li>
+              <li>Transfer certificate (for new admissions)</li>
+              <li>Two passport-size photographs</li>
+            </ul>
+          </div>
+
+          <div class="cta-card reveal">
+            <div>
+              <h3>Admissions are open for the 2026–27 session</h3>
+              <p>Limited seats available. Reach out today to book a campus visit.</p>
+            </div>
+            <a class="btn btn--primary" href="#contact">Contact the Admissions Office</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section section--alt" id="contact">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>We'd love to <em>hear from you</em></h2>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info reveal">
+              <div class="contact-item">
+                <span class="contact-item__icon" aria-hidden="true">📍</span>
+                <div><h4>Visit Us</h4><p>Ward Road, North Lakhimpur,<br />Lakhimpur District, Assam 787001, India</p></div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item__icon" aria-hidden="true">📞</span>
+                <div><h4>Call Us</h4><p><a href="tel:+913752000000">+91 3752 000 000</a><br /><a href="tel:+919100000000">+91 91000 00000</a></p></div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item__icon" aria-hidden="true">✉️</span>
+                <div><h4>Email Us</h4><p><a href="mailto:info@wwsss.edu.in">info@wwsss.edu.in</a><br /><a href="mailto:admissions@wwsss.edu.in">admissions@wwsss.edu.in</a></p></div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-item__icon" aria-hidden="true">🕘</span>
+                <div><h4>Office Hours</h4><p>Monday – Saturday<br />8:30 AM – 3:00 PM</p></div>
+              </div>
+            </div>
+
+            <form class="contact-form reveal" id="contact-form" novalidate>
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="+91 …" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option>Admission enquiry</option>
+                  <option>General information</option>
+                  <option>Campus visit</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="How can we help?" required></textarea>
+              </div>
+              <button class="btn btn--primary" type="submit">Send Message</button>
+              <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="#home">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="34" height="34">
+                <defs>
+                  <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#6fb7ff"/>
+                    <stop offset="1" stop-color="#174ea6"/>
+                  </linearGradient>
+                </defs>
+                <path d="M32 3 59 14v17c0 15-11.5 25-27 31C16.5 56 5 46 5 31V14L32 3z" fill="url(#lg2)"/>
+                <text x="32" y="42" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#eaf3ff" text-anchor="middle">WW</text>
+              </svg>
+            </span>
+            <span class="brand__text">
+              <strong>Rev. William Ward</strong>
+              <small>Senior Secondary School</small>
+            </span>
+          </a>
+          <p>Knowledge · Discipline · Service</p>
+        </div>
+        <div class="footer__col">
+          <h4>Explore</h4>
+          <a href="#about">About</a>
+          <a href="#academics">Academics</a>
+          <a href="#facilities">Facilities</a>
+          <a href="#activities">Activities</a>
+        </div>
+        <div class="footer__col">
+          <h4>School</h4>
+          <a href="#admissions">Admissions</a>
+          <a href="#contact">Contact</a>
+          <a href="#home">Back to top</a>
+        </div>
+        <div class="footer__col">
+          <h4>Reach Us</h4>
+          <p>Ward Road, North Lakhimpur,<br />Assam 787001, India</p>
+          <a href="mailto:info@wwsss.edu.in">info@wwsss.edu.in</a>
+        </div>
+      </div>
+      <div class="container footer__bottom">
+        <p>© <span id="year"></span> Rev. William Ward Senior Secondary School. All rights reserved.</p>
+        <p class="footer__credit">Knowledge · Discipline · Service</p>
+      </div>
+    </footer>
+
+    <button class="to-top" id="to-top" aria-label="Back to top">↑</button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
