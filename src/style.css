@@ -402,7 +402,7 @@ a {
   display: block;
 }
 .hero-title__line--1 {
-  font-size: clamp(2rem, 5.4vw, 4.1rem);
+  font-size: clamp(1.6rem, 5vw, 4.1rem);
   background: linear-gradient(115deg, var(--sky-400), var(--ice-100) 45%, var(--sky-300));
   -webkit-background-clip: text;
   background-clip: text;
@@ -413,7 +413,7 @@ a {
 .hero-title__line--2,
 .hero-title__line--3 {
   color: var(--white);
-  font-size: clamp(2.5rem, 8.4vw, 6.4rem);
+  font-size: clamp(1.8rem, 7.6vw, 6.2rem);
   text-shadow:
     0 1px 0 #31548f,
     0 2px 0 #2c4b80,
