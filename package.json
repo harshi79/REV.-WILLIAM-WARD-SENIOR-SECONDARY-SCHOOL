@@ -1,0 +1,18 @@
+{
+  "name": "rev-william-ward-school",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Official website of Rev. William Ward Senior Secondary School, North Lakhimpur, Assam.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
